@@ -1,2 +1,2 @@
-# Medi-Connect
-Development Application for the Hackathon
+# QuickPharma
+A web app developed for hospitals, pharmacies, and general practices. Medical personnel and facilities often face issues of being overworked and overwhelmed, with too few supplies and staff to accommodate people in need of medical assistance. This is especially true of periods of large-scale medical emergencies, a good example of which was the COVID pandemic. This app is meant to address these facilities' need for timely supplies and keep them consistently stocked so they need not worry about running out of necessary protective equipment, medicine, and other supplies that hospitals deem nesscary for operation.
