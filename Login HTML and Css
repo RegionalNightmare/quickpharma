@@ -1,0 +1,488 @@
+ Css:
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    }
+
+    .login-container {
+      display: flex;
+      height: 100vh;
+    }
+
+    /* Left Panel */
+    .left-panel {
+      flex: 1;
+      background: linear-gradient(135deg, #2563eb 0%, #1e40af 50%, #0ea5e9 100%);
+      padding: 60px;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .left-panel::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image:
+        radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.08) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .logo-section {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 60px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .logo-icon {
+      width: 56px;
+      height: 56px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      /* backdrop-filter: blur(10px); */
+    }
+
+    .logo-text {
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+
+    .welcome-section {
+      position: relative;
+      z-index: 1;
+    }
+
+    .main-title {
+      font-size: 52px;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      letter-spacing: -1px;
+    }
+
+    .subtitle {
+      font-size: 18px;
+      opacity: 0.95;
+      margin-bottom: 60px;
+      font-weight: 400;
+    }
+
+    .features {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    .feature-item {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .feature-icon {
+      width: 8px;
+      height: 8px;
+      background: white;
+      border-radius: 50%;
+      margin-top: 8px;
+      flex-shrink: 0;
+    }
+
+    .feature-content h3 {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      letter-spacing: -0.3px;
+    }
+
+    .feature-content p {
+      font-size: 15px;
+      opacity: 0.9;
+      line-height: 1.5;
+    }
+
+    /* Right Panel */
+    .right-panel {
+      flex: 1;
+      background: #f9fafb;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+    }
+
+    .form-container {
+      width: 100%;
+      max-width: 480px;
+      background: white;
+      padding: 48px;
+      border-radius: 16px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-header {
+      margin-bottom: 32px;
+    }
+
+    .form-header h2 {
+      font-size: 32px;
+      font-weight: 700;
+      color: #111827;
+      margin-bottom: 8px;
+      letter-spacing: -0.5px;
+    }
+
+    .form-header p {
+      font-size: 15px;
+      color: #6b7280;
+    }
+
+    .form-group {
+      margin-bottom: 24px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      color: #374151;
+      margin-bottom: 8px;
+    }
+
+    .optional {
+      font-weight: 400;
+      color: #6b7280;
+    }
+
+    .input-wrapper {
+      position: relative;
+    }
+
+    .input-icon {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      pointer-events: none;
+    }
+
+    .input-wrapper input {
+      width: 100%;
+      padding: 12px 16px 12px 48px;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      font-size: 15px;
+      transition: all 0.2s;
+      font-family: inherit;
+    }
+
+    .input-wrapper input:focus {
+      outline: none;
+      border-color: #2563eb;
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    }
+
+    .input-wrapper input::placeholder {
+      color: #9ca3af;
+    }
+
+    .helper-text {
+      display: block;
+      font-size: 13px;
+      color: #6b7280;
+      margin-top: 6px;
+    }
+
+    .select-wrapper {
+      position: relative;
+    }
+
+    .select-wrapper select {
+      width: 100%;
+      padding: 12px 40px 12px 16px;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      font-size: 15px;
+      background: white;
+      cursor: pointer;
+      appearance: none;
+      font-family: inherit;
+      transition: all 0.2s;
+    }
+
+    .select-wrapper::after {
+      content: '';
+      position: absolute;
+      right: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 0;
+      height: 0;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-top: 5px solid #6b7280;
+      pointer-events: none;
+    }
+
+    .select-wrapper select:focus {
+      outline: none;
+      border-color: #2563eb;
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    }
+
+    .login-button {
+      width: 100%;
+      padding: 14px;
+      background: #2563eb;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      margin-top: 8px;
+      font-family: inherit;
+    }
+
+    .login-button:hover:not(:disabled) {
+      background: #1d4ed8;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+    }
+
+    .login-button:active:not(:disabled) {
+      transform: translateY(0);
+    }
+
+    .login-button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .form-footer {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 24px;
+    }
+
+    .link {
+      font-size: 14px;
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .link:hover {
+      color: #1d4ed8;
+      text-decoration: underline;
+    }
+
+    .footer-text {
+      text-align: center;
+      font-size: 13px;
+      color: #6b7280;
+      margin-top: 32px;
+      padding-top: 32px;
+      border-top: 1px solid #e5e7eb;
+    }
+
+    .error {
+      border-color: #ef4444 !important;
+    }
+
+    .error-message {
+      display: none;
+      font-size: 13px;
+      color: #ef4444;
+      margin-top: 6px;
+    }
+
+    .error-message.show {
+      display: block;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .login-container {
+        flex-direction: column;
+      }
+
+      .left-panel {
+        padding: 40px;
+      }
+
+      .main-title {
+        font-size: 40px;
+      }
+
+      .form-container {
+        padding: 32px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .left-panel {
+        padding: 32px;
+      }
+
+      .main-title {
+        font-size: 32px;
+      }
+
+      .features {
+        gap: 24px;
+      }
+
+      .right-panel {
+        padding: 24px;
+      }
+
+      .form-container {
+        padding: 24px;
+      }
+    }
+
+
+HTML:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QuickPharma - Login</title>
+</head>
+<body>
+  <div class="login-container">
+    <!-- Left Panel -->
+    <div class="left-panel">
+      <div class="logo-section">
+        <div class="logo-icon">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+            <path d="M16 6v20M6 16h20" stroke="white" stroke-width="3" stroke-linecap="round"/>
+            <rect x="12" y="12" width="8" height="8" rx="2" fill="white"/>
+          </svg>
+        </div>
+        <h1 class="logo-text">QuickPharma</h1>
+      </div>
+
+      <div class="welcome-section">
+        <h2 class="main-title">Welcome to<br>QuickPharma</h2>
+        <p class="subtitle">Your efficient solution for medical distribution.</p>
+
+        <div class="features">
+          <div class="feature-item">
+            <div class="feature-icon"></div>
+            <div class="feature-content">
+              <h3>Streamlined Operations</h3>
+              <p>Manage orders, inventory, and suppliers in one place</p>
+            </div>
+          </div>
+
+          <div class="feature-item">
+            <div class="feature-icon"></div>
+            <div class="feature-content">
+              <h3>Real-Time Tracking</h3>
+              <p>Monitor deliveries and stock levels instantly</p>
+            </div>
+          </div>
+
+          <div class="feature-item">
+            <div class="feature-icon"></div>
+            <div class="feature-content">
+              <h3>Smart Alerts</h3>
+              <p>Stay informed about low stock and expiring items</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Panel -->
+    <div class="right-panel">
+      <div class="form-container">
+        <div class="form-header">
+          <h2>Welcome Back</h2>
+          <p>Sign in to access your dashboard</p>
+        </div>
+
+        <form id="loginForm">
+          <div class="form-group">
+            <label for="institutionId">Institution ID / Email</label>
+            <div class="input-wrapper">
+              <svg class="input-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M2.5 5.83333L10 10.8333L17.5 5.83333M3.33333 15H16.6667C17.5871 15 18.3333 14.2538 18.3333 13.3333V6.66667C18.3333 5.74619 17.5871 5 16.6667 5H3.33333C2.41286 5 1.66667 5.74619 1.66667 6.66667V13.3333C1.66667 14.2538 2.41286 15 3.33333 15Z" stroke="#6B7280" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <input
+                type="text"
+                id="institutionId"
+                name="institutionId"
+                placeholder="Enter your institution ID or email"
+                required>
+            </div>
+            <small class="helper-text">Please enter a valid Institution ID or email address.</small>
+            <small class="error-message" id="emailError">Please enter a valid email address.</small>
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <div class="input-wrapper">
+              <svg class="input-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M5.83333 9.16667V6.66667C5.83333 4.36548 7.69881 2.5 10 2.5C12.3012 2.5 14.1667 4.36548 14.1667 6.66667V9.16667M10 11.6667V13.3333M6.66667 17.5H13.3333C14.2538 17.5 15 16.7538 15 15.8333V10.8333C15 9.91286 14.2538 9.16667 13.3333 9.16667H6.66667C5.74619 9.16667 5 9.91286 5 10.8333V15.8333C5 16.7538 5.74619 17.5 6.66667 17.5Z" stroke="#6B7280" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Enter your password"
+                required>
+            </div>
+            <small class="error-message" id="passwordError">Password is required.</small>
+          </div>
+
+          <div class="form-group">
+            <label for="role">Role <span class="optional">(Optional)</span></label>
+            <div class="select-wrapper">
+              <select id="role" name="role">
+                <option value="inventory">Inventory Manager</option>
+                <option value="admin">Administrator</option>
+                <option value="pharmacist">Pharmacist</option>
+                <option value="manager">Manager</option>
+                <option value="staff">Staff</option>
+              </select>
+            </div>
+          </div>
+
+          <button type="submit" class="login-button">
+            Login
+          </button>
+
+          <div class="form-footer">
+            <a href="#" class="link">Request Access</a>
+            <a href="#" class="link">Forgot Password?</a>
+          </div>
+        </form>
+
+        <div class="footer-text">
+          Secure medical distribution platform
+        </div>
+      </div>
+    </div>
+  </div>
