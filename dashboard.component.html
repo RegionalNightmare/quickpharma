@@ -1,0 +1,23 @@
+<!-- src/app/page/dashboard/dashboard.component.html -->
+<!-- Positioning note: set CSS so this dropdown appears under the header input -->
+<div class="search-dropdown" *ngIf="showDropdown">
+  <div class="dropdown-section">
+    <h4>Products</h4>
+    <div
+      class="dropdown-item"
+      *ngFor="let item of searchResults"
+      (click)="selectResult(item)"
+    >
+      <span class="item-icon">💊</span>
+      <div class="item-details">
+        <div class="item-name">{{ item.name }}</div>
+        <div class="item-meta">{{ item.category }} • Stock: {{ item.stock }}</div>
+      </div>
+      <div class="item-price">${{ item.price }}</div>
+    </div>
+  </div>
+
+  <div class="no-results" *ngIf="!searchResults.length">
+    <span>😔</span>
+    <p>No results found</p>
+  </div>
