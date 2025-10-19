@@ -1,0 +1,51 @@
+<header>
+    <div class="logo">
+    <a routerLink="/">
+    <img src="assets/images/Quicklogo.png" alt="">
+   <span>QuickPharma</span>
+    </a>
+    
+    </div>
+   <!-- SearchBar -->
+    <div class="search-bar" *ngIf="isLoggedIn">
+         <input type="text"
+         placeholder="Search...(Eg: Paracetamol)"
+         [(ngModel)]="searchQuery"
+         (input)="onSearchChange()"
+         (focus)="showDropdown = true"
+         >
+         <img src="assets/images/search.png" alt="" (click)="performSearch()">
+
+        <!-- Dropdown results -->
+      <div class="search-dropdown" *ngIf="showDropdown && searchResults.length > 0">
+
+        <div class="dropdown-section">
+            <h4>Products</h4>
+        <div class="dropdown-item" 
+          *ngFor="let item of searchResults"
+          (mousedown)="onSearchChange()"
+          >
+           <div class="item-icon">💊</div>
+          <div class="item-details">
+            <div class="item-name">{{ item.name }}</div>
+            <div class="item-meta">{{ item.category }} • ${{ item.price }} • Stock: {{ item.stock }}</div>   
+          </div>
+        </div>
+        </div>
+
+         <!-- No results -->
+        <div class="no-results" *ngIf="searchQuery.length> 0 && searchResults.length === 0">
+            <span>😔</span>
+          <p>No medicines found for "{{ searchQuery }}"</p>
+        </div>
+      </div>
+    </div>
+    <!-- User menu(only when logged in) -->
+     
+
+   <!-- Login -->
+    <button class="icon-btn" title="Login">
+       <span class="badge">Login</span>
+    </button>
+ 
+</header>
